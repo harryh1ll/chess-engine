@@ -73,7 +73,7 @@ int main(int argc, char const *argv[])
   // uint64_t all_pieces = all_white_pieces | all_black_pieces;
 
 
-  enum enumSquare var = c4;
+  enum Square var = c4;
   uint64_t all_pieces = 0b0;
   setBit(&all_pieces, var, 1);
 
