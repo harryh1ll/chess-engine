@@ -9,7 +9,7 @@ includedir=./include
 objdir=$(srcdir)
 
 # List of source files
-sources=$(srcdir)/pawn_attacks.c $(srcdir)/bitboard_utils.c $(srcdir)/numc.c
+sources=$(srcdir)/knight_attacks.c $(srcdir)/bitboard_utils.c $(srcdir)/numc.c
 
 # Generate the list of object files by replacing .c with .o
 objects=$(patsubst $(srcdir)/%.c,$(objdir)/%.o,$(sources))

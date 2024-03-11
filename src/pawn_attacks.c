@@ -27,10 +27,10 @@ uint64_t getPawnAttacks(int squareID, int colour){
   // place a pawn on the board at the square
   setBit(&pawn_board, squareID, 1);
 
-  if (colour == 0){
+  if (colour == white){
     attack_board |= ((pawn_board << 7) & not_H_file);
     attack_board |= ((pawn_board << 9) & not_A_file);
-  } else if (colour == 1) {
+  } else if (colour == black) {
     attack_board |= ((pawn_board >> 7) & not_A_file);
     attack_board |= ((pawn_board >> 9) & not_H_file);
   } else {

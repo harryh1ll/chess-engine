@@ -4,6 +4,9 @@
 #include <stdint.h>
 
 
+const int white = 0;
+const int black = 1;
+
 enum Square {
   a1, b1, c1, d1, e1, f1, g1, h1,
   a2, b2, c2, d2, e2, f2, g2, h2,
@@ -25,7 +28,8 @@ const uint64_t not_F_file = 0b11011111110111111101111111011111110111111101111111
 const uint64_t not_G_file = 0b1011111110111111101111111011111110111111101111111011111110111111;
 const uint64_t not_H_file = 0b0111111101111111011111110111111101111111011111110111111101111111;
 
-
+const uint64_t not_AB_file = not_A_file & not_B_file;
+const uint64_t not_GH_file = not_G_file & not_H_file;
 
 
 #endif 
