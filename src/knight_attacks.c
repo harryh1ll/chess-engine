@@ -26,7 +26,7 @@ uint64_t getKnightAttacks(int squareID){
 
   // The board shown below highlights the knight (N) and 
   // specifies the notation for each 'jump'. These are used
-  // below to define the 'no jump' limits e.g illegal move
+  // below to define the 'no jump' limits i.e illegal move
   // outisde the board.
   // 
   //   8   0  0  0  0  0  0  0  0
@@ -92,10 +92,3 @@ void buildKnightAttackArrays(){
 
 
 
-int main(int argc, char const *argv[])
-{
-
-  buildKnightAttackArrays();
-
-  return 0;
-}
