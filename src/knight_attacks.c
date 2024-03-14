@@ -1,9 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include "bitboard_utils.h"
-#include "bitboard_constants.h"
-#include "numc.h"
 
 
 uint64_t getKnightAttacks(int squareID){

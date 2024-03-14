@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "bitboard_utils.h"
+#include "utils.h"
 
 
 void printBitboard(uint64_t bitboard){

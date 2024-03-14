@@ -1,5 +1,5 @@
-#ifndef BITBOARD_UTILS_H
-#define BITBOARD_UTILS_H
+#ifndef UTILS_H
+#define UTILS_H
 
 #include <stdint.h>
 

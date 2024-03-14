@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include "bitboard_utils.h"
-#include "bitboard_constants.h"
-#include "numc.h"
+#include "pawn_attacks.h"
 
 
 uint64_t getPawnAttacks(int squareID, int colour){
@@ -41,7 +36,7 @@ uint64_t getPawnAttacks(int squareID, int colour){
 }
 
 
-void buildPawnAttackArrays(){
+uint64_t* buildPawnAttackArrays(){
 
   // inputs:
 
@@ -57,32 +52,16 @@ void buildPawnAttackArrays(){
   // as you don't recompute at each turn.
 
   uint64_t* w_pawn_attack_array = u64Zeros(64);
-  uint64_t* b_pawn_attack_array = u64Zeros(64);
+  // uint64_t* b_pawn_attack_array = u64Zeros(64);
 
   for (int square = 0; square < 64; ++square) {
     w_pawn_attack_array[square] = getPawnAttacks(square, 0);
-    b_pawn_attack_array[square] = getPawnAttacks(square, 1);
+    // b_pawn_attack_array[square] = getPawnAttacks(square, 1);
   }
 
-  for (int square = 0; square < 64; ++square) {
-    printBitboard(b_pawn_attack_array[square]);
-    printf("\n");
-  }
-
-  free(w_pawn_attack_array);
-  free(b_pawn_attack_array);
+  return w_pawn_attack_array;
 
 }
-
-
-int main(int argc, char const *argv[])
-{
-
-  buildPawnAttackArrays();
-
-  return 0;
-}
-
 
 
 

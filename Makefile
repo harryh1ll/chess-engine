@@ -1,27 +1,33 @@
-CF=gcc
+CC=gcc
 CFLAGS=-Wall -Wextra -g
+EXECNAME=chess
 LDFLAGS=
-execname=chess
+LIBS=
 srcdir=./src
-includedir=./include
-
-# Use a variable for the object directory
-objdir=$(srcdir)
 
 # List of source files
-sources=$(srcdir)/knight_attacks.c $(srcdir)/bitboard_utils.c $(srcdir)/numc.c
+sources = \
+./src/main.c \
+./src/pawn_attacks.c \
+./src/utils.c \
+./src/numc.c \
+./src/constants.c \
 
-# Generate the list of object files by replacing .c with .o
-objects=$(patsubst $(srcdir)/%.c,$(objdir)/%.o,$(sources))
+OBJECTS = $(sources:.c=.o)
+INCLUDES = -I./include
 
-a.out: $(objects)
-	$(CF) $(CFLAGS) -o $(execname) $(objects) $(LDFLAGS)
+# Compile rule for generating object files
+%.o : %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-# Pattern rule to build object files in ./src
-$(objdir)/%.o: $(srcdir)/%.c
-	$(CF) $(CFLAGS) -c $< -o $@ -I$(includedir)
+# This builds the executable even 
+# when nothing is passed to 'make'
+all: $(EXECNAME)
 
-.PHONY: clean
+# Rule for linking the executable
+$(EXECNAME): $(OBJECTS)
+	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+# Clean
 clean:
-	rm -rf $(objdir)/*.o
-	rm -f $(execname)
+	rm -f $(OBJECTS) $(EXECNAME)
