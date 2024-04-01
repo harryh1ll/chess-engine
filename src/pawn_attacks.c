@@ -40,11 +40,11 @@ uint64_t* buildPawnAttackArrays(){
 
   // inputs:
 
-  // returns:
+  // returns: pointer to uint64_t. Array back to 
+  // whatever function called it
 
-  // Builds the pawn attach array for each square and
-  // each colour. This 2D array has entries for each 
-  // square and each colour. The returned uint64_t for each
+  // Builds the pawn attack array for each square and
+  // each colour. The returned pointer points to an array for each
   // entry is a bitboard of the squares which are under 'attack'
   // from the pawn on this square. Here 'attack' means
   // the diagonal which the pawns attack, rather than a 

@@ -26,9 +26,11 @@ void setBit(uint64_t *bitboard, int squareID, int value){
   uint64_t shifter = 0b1;
 
   if (value == 1) {
-      *bitboard |= (shifter << squareID);
+    // make whatever is on the sqaure one
+    *bitboard |= (shifter << squareID);
   } else if (value == 0) {
-      *bitboard &= ~(shifter << squareID);
-    }
+    // make whatever is on the square zero
+    *bitboard &= ~(shifter << squareID);
+  }
 
 }
